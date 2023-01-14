@@ -1,0 +1,113 @@
+/* 
+ Author: Ing (c)  Cristian David Arango Torres
+ Primer bootcamp "piscina-42" UTP sobre fullstack
+ Date: 2022/01/13
+         Technologic University of Pereira  */
+
+* {
+    transition: transform 0.7s; /*todas las animaciones del documento*/
+}
+
+html {
+     height: 100vh; /* que el documento tenga siempre el 100% del alto de la pantalla*/
+}
+
+/* codigo de estilo para el tablero que contiene todo el juego del memorama */
+#tablero{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    padding: 0.5%;
+    z-index: 1;
+    position: absolute;
+}
+
+/* codigo de estilo para el contenedor del juego del memorama*/
+.contenedorJuego {
+    max-width: 900px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10%;
+    margin-top: 20px;
+}
+
+/* codigo de estilo para el juego del memorama */
+.juego{
+    width: 80%;
+    padding-bottom: 80%;
+    position: relative;
+}
+
+/* codigo de estilo para las filas que contienen las cartas del juego */
+.row_board {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: 0.5% 0;
+}
+
+/* estilo para que todos los divs del codigo esten alineados en bloque */
+div {
+    display: inline-block; 
+}
+
+/* codigo para cada una de las tarjetas y las caras del juego */
+.area-tarjeta,
+.tarjeta,
+.cara {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;/*  preserva el 3d para que se note la animacion de voltear la cara */
+    cursor: pointer;
+    position: relative;
+}
+
+/* codigo de clase para poder hacer que las cartas hagan la animacion en la entrada (aparecer una a una detras del modal del inicio) */
+.cardAnimation {
+    animation: zoom .5s ease backwards;
+}
+
+/* codigo de estilo para cada una de las tarjetas del juego */
+.tarjeta {
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+/* codigo de estilo para la cara trasera que contiene la imagen generada aleatoriamente */
+.trasera { /* imagen par */
+    transform: rotateY(180deg);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+/* codigo de estilo para la cara superior que contiene la imagen de la carta cuando aun no ha sido volteada (posicion inicial) */
+.superior {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+/* codigo de estilo para que cuando se agregue esta clase se oculte el contenido de la etiqueta */
+.none {
+    display: none;
+}
+
+/* codigo de estilo para que cuando se agregue esta clase se haga la animacion de quitar la cubierta en el modal del juego */
+.show-item {
+    animation: swing 1s .5s both ease, slideOutDown 1s ease 1.5s 1 normal forwards;
+    transform-origin: top center;
+}

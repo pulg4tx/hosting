@@ -1,0 +1,156 @@
+/* 
+ Author: Ing (c)  Cristian David Arango Torres
+ Primer bootcamp "piscina-42" UTP sobre fullstack
+ Date: 2022/01/13
+         Technologic University of Pereira  */
+
+/* estos efectos hacen que la opacidad de los botones suba al poner el cursos encima */
+.contactenos:hover{
+    opacity: 100%;
+    transition: 0.5s;
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn-circulo:hover{
+    color: #0056b3;
+    opacity: 100%;
+    transition: 0.5s;
+}
+
+.btn2-circulo:hover{
+    opacity: 100%;
+    transition: 0.5s;
+}
+/* -------------------------------------------------------------- */
+
+/* este efecto hace que los botones de los modales hagan un efecto de presion al poner el cursos encima */
+.btn-comenzar:hover,
+.btn-juego:hover,
+.btn-modal:hover,
+.btn-final:hover{
+    transform: translateY(3px);
+    box-shadow: 0 4px 0 1px #d77c0e, 0 3px 0 1px #d77c0e, 0 2px 0 1px #d77c0e, 0 1px 0 1px #d77c0e, 0 0px 0 1px #d77c0e;
+    cursor:pointer;
+}
+
+/* animacion para que el copo de nieve del modal gire en efecto de aspas*/
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+/* ------------------------------ */
+
+/* animaciones para quitar la superposicion del modal, al encontrar una pareja se quita la cubierta*/
+
+/* esta animacion hace que la cubierta se agite para posteriormente deslizarla y mostrar el fondo */
+@keyframes swing {
+    20% {
+        transform: rotate3d(0, 0, 1, 15deg);
+    }
+
+    40% {
+        transform: rotate3d(0, 0, 1, -10deg);
+    }
+
+    60% {
+        transform: rotate3d(0, 0, 1, 5deg);
+    }
+
+    80% {
+        transform: rotate3d(0, 0, 1, -5deg);
+    }
+
+    100% {
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+}
+
+/* esta animacion hace que la cubierta se deslice hacia abajo y desaparezca para dejar ver el fondo */
+@keyframes slideOutDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        visibility: hidden;
+        transform: translateY(200%);
+    }
+}
+
+/* ----------------------------------------- */
+
+/* Animacion que pone las cartas al inicio, estas se muestran una por una por debajo del modal del inicio*/
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+/* ----------------------------------------- */
+
+/* Animacion de rebote, esta animacion hace que el modal de entrada haga un efecto de rebote para posteriormente dejarlo fijo*/
+@keyframes bounceIn {
+
+    0%,
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
+        animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+    }
+
+    0% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+
+    20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+
+    40% {
+        transform: scale3d(.9, .9, .9);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+
+    80% {
+        transform: scale3d(.97, .97, .97);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+/* ----------------------------------------- */
+
+/* animacion utilizada para deslizar el contenido del modal y hacer el efecto de desvanecido en la entrada */
+@keyframes entraModal {
+    0% {
+      transform: translateY(-60%);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }

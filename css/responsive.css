@@ -1,0 +1,74 @@
+/* 
+ Author: Ing (c)  Cristian David Arango Torres
+ Primer bootcamp "piscina-42" UTP sobre fullstack
+ Date: 2022/01/13
+         Technologic University of Pereira  */
+
+/* Responsive de la pagina*/
+
+
+
+/* estas propiedades sirve para hacer que el footer que contiene los iconos cambie cuando se llegue al breackpoint de 870px */
+@media(max-width:870px) {
+
+    /* propiedad para mostrar el footer diseñado para las pantallas pequeñas */
+    #small-row {
+        display: flex;
+    }
+
+    /* propiedad para ocultar el footer diseñado para las pantallas grandes */
+    #big-row {
+        display: none;
+    }
+    /* propiedad para ocultar los botones fijados en la esquierda para las pantallas pequeñas */
+    .botonesizquierda {
+        display: none;
+    }
+
+    /* propiedad para mostrar los botones de compartir en la parte inferior para las pantallas pequeñas */
+    .footerED__infoMensajeLogoMovil {
+        display: flex !important;
+    }
+    /* propiedad para mostrar el texto de Escuela Didactica en la parte inferior para las pantallas pequeñas */
+    .footerED__shared {
+        display: flex !important    ;
+        flex-direction: row;
+        position: relative;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 10px;
+        width: calc(100% - 20px);
+    }
+    /* propiedad para mostrar la separacion entre botones y texto de la parte inferior para las pantallas pequeñas */
+    .separador {
+        border-top: 1px solid #ccc;
+        max-width: 95%;
+        margin: 0 auto;
+        display: block;
+        position: relative;
+    }
+    .btnShareWhatsApp {
+        display: flex !important;
+    }
+    
+}
+
+/* estas propiedades sirve para hacer que los modales se ubiquen en filas y no en columnas cuando se llegue al breackpoint de 870px */
+@media (max-width: 992px) {
+
+    /* estas propiedades hace que el modal cambie de estar en columnas a estar en filas */
+    .columnas-pesebre {
+        display: flex !important;
+        flex-wrap: wrap;
+    }
+
+    /* estas propiedades hace que el ancho de los modales tenga un minimo del 95% */
+    .modal-game-contenido {
+        max-width: 95% !important;
+    }
+    
+    /* estas propiedades hace que los botones de compartir se encuentren justificados en las pantallas pequeñas*/
+    .modal__botonesCompartir {
+        justify-content: center;
+    }
+}
